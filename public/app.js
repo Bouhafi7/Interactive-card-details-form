@@ -79,8 +79,6 @@ function dealCard() {
         cantBlack(cvc, cvcError, cvc, onCard='000');
     } else if (!cvcRegex.test(cvc.value)) {
         wrongFormat(cvc, cvcError, errMsg = 'Wrong format, numbers only', cvcOnCard, onCard = '000');
-    } else if (cvc.value > 1000) {
-        wrongFormat(cvc, cvcError, errMsg = 'Wrong format', cvcOnCard, onCard = '000');
     } else {
         valid(cvc, cvcError, cvcOnCard, cvc);
     }
