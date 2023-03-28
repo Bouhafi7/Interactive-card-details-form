@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,800;1,900&family=Open+Sans:wght@300;400;500;600;700;800&family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Interactive card details form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cards">
+            <div class="front-card">
+                <div class="circls">
+                    <div class="circle-1"></div>
+                    <div class="circle-2"></div>
+                </div>
+                <div class="card-details">
+                    <div class="card-numbers">0000 0000 0000 0000</div>
+                    <div class="name-date">
+                        <div class="card-holder">jane appleseed</div>
+                        <div class="card-date"><span class="theMonth">00</span>/<span class="theYear">00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="back-card">
+                <div class="cvc">000</div>
+            </div>
+        </div>
+        <div class="form">
+            <form action="">
+                <div class="input">
+                    <div class="label">cardholder name</div>
+                    <input type="text" id="cardholder-name" placeholder="e.g. Jane Appleseed">
+                    <div class="cardHolderError"></div>
+                </div>
+                <div class="input">
+                    <div class="label">card number</div>
+                    <input type="text" id="card-number" maxlength="19" placeholder="e.g 1234 5678 9123 0000">
+                    <div class="cardNumberError"></div>
+                </div>
+
+                <div class="input">
+                    <div class="month-year">
+                        <div class="month-year-labels">exp. date <span class="mm-yy">(mm/yy)</span></div>
+                        <div class="month-year-inputs">
+                            <input type="text" id="mm" placeholder="MM">
+                            <input type="text" id="yy" placeholder="YY">
+                        </div>
+                        <div class="errors">
+                            <div class="monthError">monthError</div>
+                            <div class="yearError">yearError</div>
+                        </div>
+                    </div>
+                    <div class="cvc-input">
+                        <div class="cvc-label">cvc</div>
+                        <input type="text" id="cvc-num" placeholder="e.g. 123">
+                        <div class="cvcError"></div>
+                    </div>
+                </div>
+                <button class="btn">Confirm</button>
+            </form>
+            <div class="done">
+                <img src="images/icon-complete.svg" alt="" class="done-img">
+                <h2>thank you!</h2>
+                <p class="text">We've added your card details</p>
+                <button class="s-btn">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Space Grotesk;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container .cards{
+    width: 40%;
+    height: 100Vh;
+    position: relative;
+    background-image: url(images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container .cards :is(.front-card, .back-card){
+    position: absolute;
+    background-size: cover;
+    width: 445px;
+    height: 245px;
+    padding: 20px 30px;
+    border-radius: 8px;
+}
+
+.container .cards .front-card{
+    background-image: url(images/bg-card-front.png);
+    top: 35%;
+    transform: translateY(-50%);
+    right: -20%;
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+}
+
+.container .cards .back-card{
+    background-image: url(images/bg-card-back.png);
+    top: 65%;
+    transform: translateY(-50%);
+    right: -35%;
+}
+
+.container .cards .front-card .circls{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.container .cards .front-card .circle-1{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.container .cards .front-card .circle-2{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+
+.container .cards .front-card .card-numbers{
+    color: white;
+    font-weight: 400;
+    font-size: 34px;
+}
+
+.container .cards .front-card .name-date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.container .cards .back-card .cvc{
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    right: 50px;
+    top: 49%;
+    transform: translateY(-50%);
+}
+
+.container .form{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.container .form form .input{
+    margin-bottom: 20px;
+}
+
+.container .form :is(.label, #cardholder-name, #card-number){
+    width: 100%;
+}
+
+.container .form form .input .label, .container .form form .month-year .month-year-labels, .label, .container .form form .cvc-input .cvc-label{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.container .form form .input input{
+    display: flex;
+    padding: 10px 15px;
+    font-size: 17px;
+    border-radius: 6px;
+    border: 1px solid hsl(270, 3%, 87%);
+    color: hsl(279, 6%, 55%);
+    width: -webkit-fill-available;
+}
+
+.container .form form .input:nth-of-type(3){
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .form form .month-year .month-year-labels .mm-yy{
+    margin-left: 10px;
+}
+
+.container .form form .input .month-year{
+    width: 40%;
+}
+
+.container .form form .input .cvc-input{
+    width: 55%;
+}
+
+.container .form form .input input:focus{
+    outline: 2px solid hsl(278, 68%, 11%);
+}
+
+.container .form form .month-year .month-year-inputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .form form .month-year-inputs :is(#mm, #yy){
+    width: 45%;
+}
+
+.container .form form .btn, .container .form .done .s-btn{
+    width: 100%;
+    padding: 10px;
+    font-weight: 500;
+    color: white;
+    background-color: hsl(278, 68%, 11%);
+    border-radius: 6px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.container .form form .btn:active, .container .form .done .s-btn:active{
+    transform: scale(.96);
+}
+
+.cardHolderError, .cardNumberError, .monthError, .yearError, .cvcError{
+    color: hsl(0, 100%, 66%);
+    font-size: 12px;
+    font-weight: 600;
+    margin: 7px 0 0 5px;
+    display: none;
+}
+
+.errors{
+    display: flex;
+    width: 180px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.monthError, .yearError{
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    margin: -1px 10px 0 0;
+}
+
+.monthError{
+    left: 0;
+}
+
+.yearError{
+    right: 0;
+}
+
+.container .form .done{
+    text-align: center;
+    display: none;
+}
+
+.container .form .done.active{
+    display: block;
+}
+
+.container .form .done h2{
+    text-transform: uppercase;
+    margin: 25px auto 15px;
+}
+
+.container .form .done p{
+    margin-bottom: 30px;
+}
+
+@media (max-width:1325px){
+    .container .form{
+        margin: 0 170px 0 200px;
+    }
+    .container .cards .front-card, .container .cards .back-card{
+        width: 400px;
+        height: 230px;
+    }
+    .container .cards .front-card{
+        right: -15%;
+    }
+    .container .cards .back-card{
+        right: -40%;
+    }
+    .container .cards .front-card .card-numbers{
+        font-size: 30px;
+    }
+}
+
+@media (max-width:1091px){
+    .container{
+        flex-direction: column;
+    }
+    .container .cards{
+        background-image: url(images/bg-main-mobile.png);
+        width: 100%;
+        height: 235px;
+        margin-bottom: 150px;
+    }
+    .container .cards .front-card {
+        top: 123px;
+        right: 55%;
+        transform: translateX(50%);
+        z-index: 2;
+    }
+    .container .cards .back-card{
+        top: 30px;
+        right: 45%;
+        transform: translateX(50%);
+        z-index: 1;
+    }
+    .container .cards .back-card .cvc{
+        right: 35px;
+    }
+}
+
+@media (max-width:781px){
+    .container .cards :is(.back-card, .front-card){
+        width: 300px;
+        height: 165px;
+        gap: 25px;
+    }
+    .container .cards .front-card .card-numbers {
+        font-size: 20px;
+    }
+    .container .form {
+        width: calc(100% - 200px);
+        margin: 0 auto;
+    }
+    .container .cards{
+        margin-bottom: 90px;
+    }
+}
+
+@media (max-width:600px){
+    .container .form {
+        width: calc(100% - 20px);
+    }
+}
